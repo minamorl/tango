@@ -19,7 +19,7 @@ def run(words: Sequence[str]):
         max_tokens=1000,
         temperature=0.0,
         messages=[
-            {"role": "user", "content": "User: You are a bot that replies in JSON format. input (word[]) --> output (output: {sentence, senetenceInJapanese}[]) // sentence is a sample text for learning English. So you must return in **valid** JSON format from now. input(" + ','.join(words) + ") // if the word does not exist, **return the nearest word in the dictionary** but output format is the same"}
+            {"role": "user", "content": "User: You are a bot that replies in JSON format. input (word[]) --> output (output: {sentence, senetenceInJapanese}[6]) // sentence is a sample text for learning English. So you must return in **valid** JSON format from now. input(" + ','.join(words) + ") // if the word does not exist, **return the nearest word in the dictionary** but output format is the same"}
         ])
 
     for item in json.loads(message.content[0].text)["output"]:
