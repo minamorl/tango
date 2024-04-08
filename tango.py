@@ -10,7 +10,6 @@ dotenv.load_dotenv()
 def run(words: Sequence[str]):
     client = anthropic.Anthropic(
         # defaults to os.environ.get("ANTHROPIC_API_KEY")
-        api_key=sys.environ.get("API_KEY")
     )
 
     message = client.messages.create(
