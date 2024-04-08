@@ -16,7 +16,6 @@ def run(words: Sequence[str]):
         model="claude-3-opus-20240229",
         max_tokens=1000,
         temperature=0.0,
-        system="Respond only in Yoda-speak.",
         messages=[
             {"role": "user", "content": "User: You are a bot that replies in JSON format. input (word[]) --> output (output: {sentence, senetenceInJapanese}[]) // sentence is a sample text for learning English. So you must return in **valid** JSON format from now. input(" + ','.join(words) + ") // if the word does not exist, **return the nearest word in the dictionary** but output format is the same"}
         ])
