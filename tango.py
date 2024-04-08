@@ -2,14 +2,16 @@ import anthropic
 import sys
 import json
 import tinydb
+import os
 import dotenv
 from collections.abc import Mapping, Sequence
 from termcolor import cprint
 
-dotenv.load_dotenv()
+dotenv.load_dotenv('.env.local')
 def run(words: Sequence[str]):
     client = anthropic.Anthropic(
         # defaults to os.environ.get("ANTHROPIC_API_KEY")
+        api_key=os.environ.get("ANTHROPIC_API_KEY"),
     )
 
     message = client.messages.create(
